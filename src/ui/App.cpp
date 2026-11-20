@@ -17,10 +17,10 @@ bool App::init(SweepConfig initial_cfg, int width, int height) {
     glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit())
         return false;
-
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+// The following three lines are commented out to avoid using features incompatible with the RPi4.
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+//    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+//    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     m_window = glfwCreateWindow(width, height, "rtl-scan", nullptr, nullptr);
     if (!m_window) {
@@ -41,7 +41,7 @@ bool App::init(SweepConfig initial_cfg, int width, int height) {
     ImGui::GetStyle().WindowBorderSize = 1.0f;
 
     ImGui_ImplGlfw_InitForOpenGL(m_window, true);
-    ImGui_ImplOpenGL3_Init("#version 330");
+    ImGui_ImplOpenGL3_Init("#version 300 es"); // Latest version compatible with RPi4. App seems to work fine with the downgrade.
 
     m_waterfall.init();
     m_controls.init(initial_cfg);
