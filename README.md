@@ -1,6 +1,6 @@
 # rtl-scan
 
-A next-generation RTL-SDR spectrum analyzer with live wideband FFT and waterfall display, built with Dear ImGui.
+A next-generation RTL-SDR spectrum analyzer with live wideband FFT and waterfall display, built with Dear ImGui. Fork modified for compatibility with Raspberry Pi 4.
 
 ![rtl-scan screenshot placeholder](docs/screenshot.png)
 
@@ -37,7 +37,7 @@ A next-generation RTL-SDR spectrum analyzer with live wideband FFT and waterfall
 | [librtlsdr](https://github.com/osmocom/rtl-sdr) | RTL-SDR hardware access |
 | [fftw3f](https://www.fftw.org/) | Single-precision FFT |
 | [Dear ImGui](https://github.com/ocornut/imgui) (docking branch, vendored) | GUI |
-| GLFW3 + OpenGL 3.3 | Window and rendering backend |
+| GLFW3 + OpenGL 3.0 ES | Window and rendering backend |
 
 ## Build
 
@@ -45,7 +45,7 @@ A next-generation RTL-SDR spectrum analyzer with live wideband FFT and waterfall
 
 ```bash
 sudo apt install librtlsdr-dev libfftw3-dev libglfw3-dev libgl-dev cmake build-essential
-git clone https://github.com/SarahRoseLives/rtl-scan.git
+git clone https://github.com/jajv-uabc/rtl-scan.git
 cd rtl-scan
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
