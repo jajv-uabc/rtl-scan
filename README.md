@@ -2,7 +2,7 @@
 
 A next-generation RTL-SDR spectrum analyzer with live wideband FFT and waterfall display, built with Dear ImGui. Fork modified for compatibility with Raspberry Pi 4.
 
-![rtl-scan screenshot placeholder](docs/screenshot.png)
+![rtl-scan screenshot placeholder](screenshot.png)
 
 ## Features
 
